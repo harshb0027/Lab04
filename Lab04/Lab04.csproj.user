@@ -15,5 +15,6 @@
     <WebStackScaffolding_DbContextTypeFullName>Lab04.Data.MarketDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
+    <NameOfLastUsedPublishProfile>C:\Users\hp\source\repos\Lab04\Lab04\Properties\PublishProfiles\Harsh0027WebApp - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
