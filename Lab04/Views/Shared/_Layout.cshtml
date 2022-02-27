@@ -3,18 +3,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/StyleSheet.css">
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div id="header">
+    <header>
         @Html.ActionLink("Home", "Index", "Home")&emsp;
         @Html.ActionLink("Client", "Index", "Clients")&emsp;
-        @Html.ActionLink("Brokerage", "Index", "Brokerages");
+        @Html.ActionLink("Brokerage", "Index", "Brokerages")
 
 
-    </div>
-    <div>
+    </header>
+    <div id="content">
         @RenderBody()
     </div>
+    <footer>
+        Working with database
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

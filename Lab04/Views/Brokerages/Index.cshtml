@@ -21,27 +21,59 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.Brokerages) {
-        string selectedRow = "";
     
-        {
-            selectedRow = "success";
-        }   
+        @foreach (var item in Model.Brokerages) {
+            string selectedRow = "";
     
-        <tr class=@selectedRow>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fee)
-            </td>
-            <td>
-                <a asp-action="Select" asp-route-id = "@item.Id">Select</a>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+            {
+                selectedRow = "success";
+            }   
+    
+            <tr class=@selectedRow>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fee)
+                   
+       
+         
+                </td>
+                <td>
+                    <a asp-action="Index" asp-route-id = "@item.Id">Select</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+@if (Model.Subscriptions != null)
+{
+    <h3>
+      Subscribers to the brokerages
+    </h3>
+    <table class="table">
+        <tr>
+            @if (Model.Subscriptions.Count() > 0)
+            {
+                <th> Client-Id </th>
+                <th>Brokers-Id</th>
+            }
+            else
+            {
+                <th> No record exist </th>
+            }
+        </tr>
+        @foreach(var item01 in Model.Subscriptions){
+                       
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item01.ClientId)
+                            </td>
+                            <td> @Html.DisplayFor(modelItem => item01.BrokerageId)</td>
+                        </tr>
+        }
+    </table>
+}
